@@ -1,0 +1,31 @@
+
+.category-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row-2{
+    
+   
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    
+    
+ }
+
+ .card-1{
+    
+   width: 200px;
+   height: 200px;
+   justify-content: center;
+
+   
+ }
+
+ 
+
+ .card-2:hover{
+  border: 3px solid #e9fa00 !important;
+ }

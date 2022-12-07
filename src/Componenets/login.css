@@ -1,0 +1,39 @@
+.gradient-form{
+   
+    background-image: url('../Images/login.jpg');
+   
+    
+}
+.Carousel-1{
+    width: 70%;
+    margin: auto;
+  
+    
+}
+.members-1{
+    margin:auto !important;
+}
+.back-color{
+    background-color: rgb(255, 232, 25);
+    
+}
+
+.color-nav{
+    color: black;
+    text-decoration:none;
+
+    
+}
+
+.work-card{
+    margin: auto;
+    border: none;
+    
+}
+
+.front5{
+    border-radius: 50%;
+    width: 470px;
+    margin: auto;
+}
+

@@ -1,37 +1,35 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import RestaurantSharpIcon from '@mui/icons-material/RestaurantSharp';
 
- function Navbar() {
+import Container from "react-bootstrap/Container";
+
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import {Link} from "react-router-dom"
+
+import './login.css'
+
+function NavScrollExample() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" style={{backgroundColor:"black"}}>
-        <Toolbar>
-        <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              
-              color="inherit"
-            >
-              <RestaurantSharpIcon />
-            </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Foodistan
-          </Typography>
-          <Button color='inherit'>About Us</Button>
-          <Button color="inherit">Login</Button>
-          <Button color="inherit">Cart</Button>
-        </Toolbar>
-      </AppBar>
-    </Box>
+    <Navbar
+      
+      expand="lg md"
+      className="shadow p-3 mb-5  rounded back-color "
+    >
+      <Container fluid>
+        <Link to='/' className="color-nav">
+        <Navbar.Brand  >Restaurant</Navbar.Brand></Link>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll" className="justify-content-end">
+          <Nav className="nav_main">
+            <Nav.Link ><Link to='/contactus' className="color-nav">Contact US </Link></Nav.Link>
+            <Link className="color-nav"><Nav.Link >About Us</Nav.Link></Link>
+
+            <Nav.Link ><Link to='/login' className="color-nav">Login </Link> </Nav.Link>
+            <Nav.Link href="#">Cart </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
-export default Navbar;
+
+export default NavScrollExample;
