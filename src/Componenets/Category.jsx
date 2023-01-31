@@ -17,7 +17,7 @@ export default function Category() {
       <Container>
         <Row>
           <Col>
-            <h6 className="category-title"> TOP FOODS</h6>
+            <h6 className="category-title" style={{color:'#FED049 ' , marginTop:"50px"}}> TOP FOODS</h6>
           </Col>
         </Row>
         <Row>
@@ -27,9 +27,9 @@ export default function Category() {
         </Row>
 
         <Row xs={1} sm={2} md={2} lg={2} xl={4} className="row-2">
-          <Col>
+          <Col className="">
             <Link to="/homescreen">
-              <Card className="card-2">
+              <Card className="card-2 shadow p-3 mb-5  rounded back-color "  style={{ border:"none" }}>
                 <Card.Img
                   className="card-1  "
                   src="https://marketplace.foodotawp.com/wp-content/uploads/2021/05/Layer256-1.png"
@@ -41,7 +41,7 @@ export default function Category() {
 
           <Col>
          
-            <Card className="card-2">
+            <Card className="card-2 shadow p-3 mb-5  rounded back-color "  style={{ border:"none" }}>
               <Card.Img
                 className="card-1"
                 src="https://marketplace.foodotawp.com/wp-content/uploads/2021/05/1qLayer-1.png"
@@ -51,7 +51,7 @@ export default function Category() {
             </Card >
           </Col>
           <Col>
-            <Card className="card-2">
+            <Card className="card-2 shadow p-3 mb-5  rounded back-color "  style={{ border:"none" }}>
               <Card.Img
                 className="card-1"
                 src="https://marketplace.foodotawp.com/wp-content/uploads/2021/05/sa1.png"
@@ -67,7 +67,7 @@ export default function Category() {
         <Row xs={1} sm={2} md={2} lg={2} xl={4} className="row-2">
           <Col>
           <Link to="/burgerscreen">
-            <Card className="card-2">
+            <Card className="card-2 shadow p-3 mb-5  rounded back-color "  style={{ border:"none" }}>
               <Card.Img
                 className="card-1"
                 src="https://marketplace.foodotawp.com/wp-content/uploads/2021/05/pngwing.png"
@@ -78,7 +78,7 @@ export default function Category() {
             </Link>
           </Col>
           <Col>
-            <Card className="card-2">
+            <Card className="card-2 shadow p-3 mb-5  rounded back-color "  style={{ border:"none" }}>
               <Card.Img
                 className="card-1"
                 src="https://marketplace.foodotawp.com/wp-content/uploads/2021/05/sssssa1.png"
@@ -89,7 +89,7 @@ export default function Category() {
           </Col>
 
           <Col>
-            <Card className="card-2">
+            <Card className="card-2 shadow p-3 mb-5  rounded back-color "  style={{ border:"none" }}>
               <Card.Img
                 className="card-1"
                 src="https://marketplace.foodotawp.com/wp-content/uploads/2021/05/asasLayer-1.png"

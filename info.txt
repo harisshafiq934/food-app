@@ -1,0 +1,5 @@
+stripe publish key: 
+    pk_test_51MOdoIIqZWT7PwSE7t6eSzL9FZk2092ufZInhyhaGB3iiO0QpTsZaVT9fxc2VU9tVRMH6Ps5VH0anPVE8PMUNr00007RJyuuqN
+
+    secret key:
+    sk_test_51MOdoIIqZWT7PwSEh1XbuOsSt7WCAu58sGC7VkmgmfREzqa8GVicKR5Tu2QnD5MhsBllSmjEDEypnQXctC0fg95j00KLL5CPrR

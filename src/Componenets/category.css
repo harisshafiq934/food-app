@@ -20,6 +20,7 @@
    width: 200px;
    height: 200px;
    justify-content: center;
+   border: none;
 
    
  }
@@ -27,5 +28,5 @@
  
 
  .card-2:hover{
-  border: 3px solid #e9fa00 !important;
+  border: 3px solid rgb(253, 235, 71) !important;
  }

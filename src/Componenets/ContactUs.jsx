@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/esm/Container';
 import Form from 'react-bootstrap/Form';
 import Card from'react-bootstrap/Card';
 import pic from '../Images/login.jpg';
+import {Link} from "react-router-dom"
 
 
 function ContactUs() {
@@ -27,10 +28,11 @@ function ContactUs() {
       <Form.Group className="mb-3" controlId="formBasicMessage">
       <Form.Control as="textarea" rows={3} placeholder="Massage" />
       </Form.Group>
+      <Link to ="/">
       <Button className="mt-2 "variant="primary" type="Submit">
         Send
       </Button>
-      
+      </Link>
     </Form>
     </Card>
     

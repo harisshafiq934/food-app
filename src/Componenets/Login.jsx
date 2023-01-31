@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import "./login.css"
 import {
   MDBBtn,
@@ -11,8 +11,24 @@ import {
 from 'mdb-react-ui-kit';
 import {Link} from "react-router-dom"
 
+import {useDispatch, useSelector } from 'react-redux'
+import { loginUser } from '../actions/userAction';
 
 function Login() {
+  const [email,setEmail] = useState('')
+  const [password,setPassword]= useState('')
+ const dispatch = useDispatch()
+
+
+ useEffect(()=>{
+ if(localStorage.getItem('currentUser')){
+  window.location.href = "/"
+ }
+ },[])
+ const loginHandler = () => {
+  const user = {email, password}
+  dispatch(loginUser(user))
+ }
   return (
     <>
    
@@ -33,12 +49,15 @@ function Login() {
             <p>Please login to your account</p>
 
 
-            <MDBInput wrapperClass='mb-4' label='Email address' id='form1' type='email'/>
-            <MDBInput wrapperClass='mb-4' label='Password' id='form2' type='password'/>
+            <MDBInput wrapperClass='mb-4' label='Email address' id='form1' type='email' value={email} onChange= {(e) => setEmail(e.target.value)}/>
+            <MDBInput wrapperClass='mb-4' label='Password' id='form2' type='password' value={password} onChange = {(e)=> setPassword (e.target.value)}/>
 
 
             <div className="text-center pt-1 mb-5 pb-1">
-              <MDBBtn className="mb-4 w-100 signupbtn " color='warning'>Sign in</MDBBtn>
+             
+              <MDBBtn className="mb-4 w-100 signupbtn " color='warning' 
+               onClick={loginHandler}>Sign in</MDBBtn>
+             
               <a className="text-muted" href="#!">Forgot password?</a>
             </div>
 

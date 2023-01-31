@@ -1,16 +1,20 @@
 import "./App.css";
 
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./Componenets/Login";
 
 import Parent from "./Componenets/Parent";
 import Homescreen from "./Screens/Homescreen";
 import Burgerscreen from "./Screens/Burgerscreen";
-import Broast from "./Componenets/Broast";
+
 import ContactUs from "./Componenets/ContactUs";
 import Signup from "./Componenets/SignUp";
 import Navbar from "./Componenets/Navbar"
 import Footer from "./Componenets/Footer";
+import Cartscreen from "./Screens/Cartscreen";
+import Checkout from "./Componenets/Checkout";
+import Orderscreen from "./Screens/Orderscreen";
+
 function App() {
   return (
     <div>
@@ -26,10 +30,16 @@ function App() {
         <Route path="/signup" element={<Signup/>}/>
         
           <Route path="/login" element={<Login />} />
+          <Route path="/cart" element={<Cartscreen/>}/>
+          <Route path="/paynow" element={<Checkout/>} />
+          <Route path="/orders" element={<Orderscreen />} />
         </Routes>
 
         <Footer />
       </div>
+
+
+      {/* <Pizzas/> */}
     </div>
   );
 }

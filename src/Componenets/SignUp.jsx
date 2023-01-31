@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./login.css"
 import {
   MDBBtn,
@@ -8,19 +8,44 @@ import {
   MDBInput
 }
 from 'mdb-react-ui-kit';
-import {Link} from "react-router-dom"
+import {Link} from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux';
+import { registerUser } from '../actions/userAction';
+import Loader from './Loader';
+import Success from './Success';
+import Error from './Error';
 
 
 function Signup() {
+  const [name, setName] = useState(""); 
+  const [email, setEmail] = useState(""); 
+  const [password, setPassword] = useState(""); 
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  const registerState =useSelector(state => state.registerUserReducer)
+  const {error, success, loading} = registerState
+  const dispatch=  useDispatch();
+
+  const registerhandler = ()  => {
+    if (password !== confirmPassword ){
+      alert("password do not match");
+    } else{
+      const user ={name, email , password, confirmPassword }
+      dispatch(registerUser(user));
+    }
+  }
   return (
     <>
-    
+      {loading && <Loader/>}
     
     <MDBContainer className="my-5 ">
+    
+      {success && <Success success="User Register Successfully"/> }
+      {error && <Error error="Somthing went wrong"/>}
 
       <MDBRow>
 
-        <MDBCol col='6' xs={12} sm={12} md={6}  lg={6}   className="mb-5">
+        <MDBCol col='6' xs={12} sm={12} md={6}  lg={6}   className="mb-5 m-auto">
           <div className="d-flex flex-column ms-5">
 
             <div className="text-center">
@@ -32,14 +57,23 @@ function Signup() {
             <p>Please Sign Up your account</p>
 
 
-            <MDBInput wrapperClass='mb-4' label='User Name' id='form1' type='Name'/>
-            <MDBInput wrapperClass='mb-4' label='Email address' id='form1' type='email'/>
-            <MDBInput wrapperClass='mb-4' label='password' id='form1' type='password'/>
-            <MDBInput wrapperClass='mb-4' label='Rapeat Password' id='form2' type='rapeat-password'/>
+            <MDBInput wrapperClass='mb-4' label='User Name' id='form1' type='Name' 
+            value={name}
+            onChange={e =>setName(e.target.value)}/>
+            <MDBInput wrapperClass='mb-4' label='Email address' id='form2' type='email'
+             value={email}
+             onChange={e =>setEmail(e.target.value)}/>
+            <MDBInput wrapperClass='mb-4' label='password' id='form3' type='password'
+             value={password}
+             onChange={e =>setPassword(e.target.value)}/>
+            <MDBInput wrapperClass='mb-4' label='Confirm Password' id='form4' type='Password'
+             value={confirmPassword}
+             onChange={e =>setConfirmPassword(e.target.value)}/>
 
 
             <div className="text-center pt-1 mb-5 pb-1">
-              <MDBBtn className="mb-0 w-100 gradient-custom-2" color='warning'>Sign Up</MDBBtn>
+              <MDBBtn className="mb-0 w-100 gradient-custom-2" color='warning' 
+               onClick={registerhandler} >Sign Up</MDBBtn>
             </div>
 
             <div className="d-flex flex-row align-items-center justify-content-center pb-4 mb-4">

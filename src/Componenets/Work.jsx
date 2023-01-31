@@ -15,8 +15,9 @@ import './login.css'
 function Work() {
   return (
     <>
+    <Container>
     
-      <Row xs={1} sm={1} md={1} lg={1} className='m-auto'   >
+      <Row xs={1} sm={1} md={1} lg={1} className='m-auto '   >
         <img src='https://marketplace.foodotawp.com/wp-content/uploads/2021/05/banner-1.jpg' />
       <h4  style={{textAlign:"center",color:'#FED049'}}>HOW IT WORKS</h4>
       <h1 style={{textAlign:"center",color:'black',}}>Simple Process</h1>
@@ -24,7 +25,7 @@ function Work() {
       </Row>
     <Row  xs={1}sm={1} md={1} lg={3} style={{width:"100%"}} className='m-auto' >
     
-    <Col>
+    <Col className='m-auto'>
 
     <Card  className='work-card'>
       <Card.Img variant="top" src={Front1} style={{height:'10rem',width:'10rem'}} className='p-3' />
@@ -64,9 +65,9 @@ function Work() {
     </Row>
    
     <br></br>
-    <Row className="m-auto " sm={1} md={1} lg={2} style={{width:"100%"}}>
+    <Row className="m-auto " xs={1} sm={1} md={1} lg={2} style={{width:"100%"}}>
         
-        <Col className='mt-5' >
+        <Col className='mt-5 shadow p-3 mb-4  rounded white-color  ' >
         <h4 >PIZZA DELIVERY</h4>
         <h1>Get Started Today!</h1>
         <h3>Everything you need to build an amazing food restaurant responsive website.</h3>
@@ -74,12 +75,12 @@ function Work() {
         </Col>
         
         <Col  >
-        <img  className='front5' src={Front4} />
+        <img  className='front5 mt-3' src={Front4} />
         </Col>
     </Row>
 
   
-    
+    </Container>
    
     
  

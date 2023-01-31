@@ -1,28 +1,43 @@
-import React from "react";
-import Pizza from "../Componenets/Pizza";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import pizzas from "../pizzadata";
+import React, { useEffect } from 'react';
+import Pizza from '../Componenets/Pizza';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import { getAllPizzas } from '../actions/pizzaAction';
+import { useDispatch, useSelector } from 'react-redux';
+import '../Componenets/pizza.css';
+import Loader from '../Componenets/Loader';
+import Error from '../Componenets/Error';
 
-import "../Componenets/pizza.css";
+const HomeScreen = () => {
+  const dispatch = useDispatch();
 
- function Homescreen() {
+  const pizzaState = useSelector((state) => state.getAllPizzaReducer);
+  const { loading, pizzas, error } = pizzaState;
+
+  useEffect(() => {
+    dispatch(getAllPizzas());
+  }, [dispatch]);
+
   return (
     <>
-   
-      <Row className="row-1 ">
-        {pizzas.map((pizza) => {
-          return (
-            <Col xs={12} sm={6} md={4} lg={4} className="pt-5">
-              <div>
+      
+        {loading ? (
+         <Loader/>
+        ) : error ? (
+          <Error>Error while fetching{error}</Error>
+          
+        ) : (
+          <Row className="row-1">
+            {pizzas.map((pizza) => (
+              <Col xs={12} sm={6} md={4} lg={4} className="pt-5">
                 <Pizza pizza={pizza} />
-              </div>
-            </Col>
-          );
-        })}
-      </Row>
+              </Col>
+            ))}
+          </Row>
+        )}
+     
     </>
   );
-}
+};
 
-export default Homescreen;
+export default HomeScreen;
